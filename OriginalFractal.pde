@@ -22,8 +22,8 @@ public void myFractal(int x, int  y, int siz){
     vertex(x-siz, y);
     endShape();
   if(siz > 0) {
-    myFractal(x+siz/2, y+siz/2, siz/2);
-    myFractal(x-siz/2, y-siz/2, siz/2);
+    myFractal((int)x+siz/2, (int)y+siz/2, (int)siz/2);
+    myFractal((int)x-siz/2, (int)y-siz/2, (int)siz/2);
     myFractal(x, y, siz-10);
   }
 }
