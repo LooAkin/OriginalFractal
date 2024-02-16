@@ -1,27 +1,35 @@
 public void setup(){
   size(800,800);
-  fill(200, 0, 50, 25);
-  noStroke();
+  stroke(0, 250, 255);
 }  
 
 public void draw(){
-  background(255);
-  myFractal (400, 400, 400);
+  background(0);
+  myFractal (400, 400, 200);
 }
 
 public void myFractal(int x, int  y, int siz){
-  ellipse(x*.5, y, siz, siz);
-  ellipse(x*.625, y*.625, siz, siz);
-  ellipse(x*.875, y*.475, siz, siz);
-  ellipse(x*1.125, y*.475, siz, siz);
-  ellipse(x*1.375, y*.625, siz, siz);
-  ellipse(x*1.5, y, siz, siz);
-  ellipse(x*1.375, y*1.325, siz, siz);
-  ellipse(x*1.125, y*1.475, siz, siz);
-  ellipse(x*.875, y*1.475, siz, siz);
-  ellipse(x*.625, y*1.325, siz, siz);
+
+    fill(255,255,255, 50);
+    beginShape();
+    vertex(x-siz*.5, y-siz);
+    vertex(x-siz*.5, y-siz);
+    vertex(x+siz*.5, y-siz);
+    vertex(x+siz, y);
+    vertex(x+siz*.5, y+siz);
+    vertex(x, y+siz);
+    vertex(x-siz, y);
+    vertex(x-siz, y);
+    endShape();
   if(siz > 0) {
-    myFractal(x, y, siz-25);
-    
+    myFractal(x+siz/2, y+siz/2, siz/2);
+    myFractal(x-siz/2, y-siz/2, siz/2);
+    myFractal(x-siz/2, y+siz/2, siz/2);
+    myFractal(x+siz/2, y-siz/2, siz/2);
+    myFractal(x, y+siz/2, siz/2);
+    myFractal(x, y-siz/2, siz/2);
+    myFractal(x, y, siz-10);
   }
 }
+
+ 
